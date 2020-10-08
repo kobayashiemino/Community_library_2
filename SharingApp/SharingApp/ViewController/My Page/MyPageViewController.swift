@@ -26,6 +26,8 @@ class MyPageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = "my page"
+        
         navigationController?.isNavigationBarHidden = true
         createCollectionView()
         

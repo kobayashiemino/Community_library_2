@@ -9,101 +9,90 @@
 import UIKit
 import SDWebImage
 
+struct Item {
+    let image: UIImage
+    let sponcer: String
+    let sponcerIcon: UIImage
+    let title: String
+}
+
 class HomeCell: UICollectionViewCell {
     
-    static let identifier = "SideMenuTableViewCell"
-    
-    private var categoryTitle: String?
-    
-    public let itemView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.clipsToBounds = true
-        imageView.contentMode = .scaleAspectFill
-        imageView.layer.cornerRadius = 20
-        return imageView
-    }()
+    static let identifier = "HomeCell"
     
     private let categoryLabel: UILabel = {
         let label = UILabel()
-        label.text = "記事"
-        label.textAlignment = .center
-        label.backgroundColor = .white
-        label.textColor = .lightGray
-        label.layer.shadowColor = UIColor.lightGray.cgColor
-        label.layer.shadowOffset = CGSize(width: 1, height: 1)
-        label.layer.shadowOpacity = 0.5
-        label.layer.masksToBounds = true
-        label.layer.cornerRadius = 10
-        label.font = .boldSystemFont(ofSize: 15)
+        label.font = .boldSystemFont(ofSize: 20)
         return label
     }()
     
-//    private let blurView: UIVisualEffectView = {
-//        let blur = UIBlurEffect(style: .dark)
-//        let view = UIVisualEffectView(effect: blur)
-//        view.alpha = 0.5
-//        return view
-//    }()
-//
-//    private let thankButton: UIButton = {
-//        let button = UIButton()
-//        button.setImage(UIImage(systemName: "rosette"), for: .normal)
-//        button.tintColor = .systemGray
-//        button.backgroundColor = .white
-//        button.layer.borderWidth = 1
-//        button.layer.borderColor = UIColor.systemGray.cgColor
-//        return button
-//    }()
-    
-    private let productNameLabel: UILabel = {
+    private lazy var moreLabel: UILabel = {
         let label = UILabel()
-        label.numberOfLines = 1
-        label.textColor = .lightGray
-        label.textAlignment = .center
+        label.textAlignment = .right
+        let attributedString = NSMutableAttributedString()
+        attributedString.append(NSAttributedString(string: "more "))
+        attributedString.append(setImageInLabel(image: UIImage(systemName: "chevron.right")!))
+        label.attributedText = attributedString
         return label
     }()
     
-    private let brandNameLabel: UILabel = {
-        let label = UILabel()
-        label.numberOfLines = 1
-        label.textColor = .lightGray
-        label.textAlignment = .center
-        return label
-    }()
+    private var items = [Item]()
+    
+    private var collectionView: UICollectionView?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = .white
-        addSubview(itemView)
-        itemView.addSubview(categoryLabel)
-        addSubview(brandNameLabel)
-        addSubview(productNameLabel)
-//        itemView.addSubview(blurView)
-//        itemView.addSubview(thankButton)
-    }
-    
-    override func layoutSubviews() {
-        itemView.frame = CGRect(x: 0, y: 0, width: width, height: height - 80)
-        categoryLabel.frame = CGRect(x: 10, y: 10, width: 70, height: 40)
-        brandNameLabel.frame = CGRect(x: 0, y: itemView.bottom + 10, width: width, height: 20)
-        productNameLabel.frame = CGRect(x: 0, y: brandNameLabel.bottom + 10, width: width, height: 20)
         
-//        blurView.frame = CGRect(x: 0, y: width, width: width, height: height - width)
-        
-//        let width: CGFloat = 30
-//        thankButton.frame = CGRect(x: -3, y: -3, width: width, height: width)
-//        thankButton.layer.cornerRadius = thankButton.width / 2
+        backgroundColor = .white
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: 200, height: 200)
+        layout.scrollDirection = .horizontal
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+        collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        if let collectionView = collectionView {
+            addSubview(collectionView)
+            collectionView.delegate = self
+            collectionView.dataSource = self
+            collectionView.register(HomeItemCell.self, forCellWithReuseIdentifier: HomeItemCell.identifier)
+            collectionView.backgroundColor = .white
+            collectionView.showsHorizontalScrollIndicator = false
+        }
+        addSubview(categoryLabel)
+        addSubview(moreLabel)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    public func configure(post: Post) {
-        let imageUrl = URL(string: post.imageURL)
-        itemView.sd_setImage(with: imageUrl, completed: nil)
-        
-        brandNameLabel.text = post.title
-        productNameLabel.text = post.title
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        let moreLabelWidth: CGFloat = 100
+        categoryLabel.frame = CGRect(x: 10, y: 10, width: width - moreLabelWidth, height: 50)
+        moreLabel.frame = CGRect(x: width - moreLabelWidth - 10, y: 10, width: moreLabelWidth, height: 50)
+        collectionView?.frame = CGRect(x: 0, y: categoryLabel.bottom, width: width, height: height - 50)
+    }
+    
+    public func configure(title: String, items:[Item]) {
+        categoryLabel.text = title
+        self.items = items
+    }
+    
+    private func setImageInLabel(image: UIImage) -> NSAttributedString {
+        let attachment = NSTextAttachment()
+        attachment.image = image
+        return NSAttributedString(attachment: attachment)
+    }
+}
+
+extension HomeCell: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return items.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeItemCell.identifier, for: indexPath) as! HomeItemCell
+        cell.configure(item: items[indexPath.row])
+        return cell
     }
 }
