@@ -16,9 +16,15 @@ struct Item {
     let title: String
 }
 
+protocol HomeCellDelegate: AnyObject {
+    func didTapCell()
+}
+
 class HomeCell: UICollectionViewCell {
     
     static let identifier = "HomeCell"
+    
+    public var delegate: HomeCellDelegate?
     
     private let categoryLabel: UILabel = {
         let label = UILabel()
@@ -94,5 +100,9 @@ extension HomeCell: UICollectionViewDelegate, UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeItemCell.identifier, for: indexPath) as! HomeItemCell
         cell.configure(item: items[indexPath.row])
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        delegate?.didTapCell()
     }
 }

@@ -127,7 +127,14 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCell.identifier, for: indexPath) as! HomeCell
         cell.configure(title: categoryTitles[indexPath.row],
                        items: items[indexPath.row])
-        print("itemsitems:\(items[indexPath.row])")
+        cell.delegate = self
         return cell
+    }
+}
+
+extension HomeViewController: HomeCellDelegate {
+    func didTapCell() {
+        let vc = ProductDetailViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
