@@ -96,7 +96,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
-        self.title = "home"
+        self.navigationItem.title = "home"
         
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: view.width, height: 270)

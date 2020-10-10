@@ -41,6 +41,7 @@ class SponcerCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.text = "Category"
         label.font = .systemFont(ofSize: 13)
+        label.textColor = .darkGray
         return label
     }()
     
@@ -49,6 +50,7 @@ class SponcerCollectionViewCell: UICollectionViewCell {
         label.text = "Title"
         label.font = .boldSystemFont(ofSize: 16)
         label.numberOfLines = 0
+        label.textColor = .darkGray
         return label
     }()
     
@@ -73,8 +75,8 @@ class SponcerCollectionViewCell: UICollectionViewCell {
 //        shadowView.layer.cornerRadius = shadowView.width / 2
         relatedImageView.frame = CGRect(x: 0, y: 0, width: width, height: 80)
         relatedImageView.center.x = width / 2
-        categoryLabel.frame = CGRect(x: 5, y: relatedImageView.bottom, width: width, height: 25)
-        titleLabel.frame = CGRect(x: 5, y: categoryLabel.bottom, width: width, height: 20)
+        categoryLabel.frame = CGRect(x: 5, y: relatedImageView.bottom + 5, width: width, height: 20)
+        titleLabel.frame = CGRect(x: 5, y: categoryLabel.bottom, width: width, height: 17)
 //        gradientView.frame = bounds
     }
     

@@ -33,7 +33,7 @@ class SearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "search"
+        self.navigationItem.title = "search"
         navigationController?.navigationBar.topItem?.titleView = searchBar
         
         view.addSubview(tableView)

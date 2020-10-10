@@ -13,27 +13,32 @@ class MainTabBar: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "Featured"
+        self.navigationItem.title = "Featured"
         
         let homeViewController = templeteViews(selectedImage: UIImage(systemName: "house.fill")!,
                                                    normalImage: UIImage(systemName: "house")!,
-                                                   viewController: HomeViewController())
+                                                   viewController: HomeViewController(),
+                                                   title: "home")
 
         let serchViewController = templeteViews(selectedImage: UIImage(systemName: "magnifyingglass")!,
                                                 normalImage: UIImage(systemName: "magnifyingglass")!,
-                                                viewController: SearchViewController())
+                                                viewController: SearchViewController(),
+                                                title: "search")
         
         let featuredViewController = templeteViews(selectedImage: UIImage(systemName: "star.fill")!,
                                                    normalImage: UIImage(systemName: "star")!,
-                                                   viewController: FeaturedViewController())
+                                                   viewController: HomeViewController(),
+                                                   title: "featured")
         
         let favoriteViewController = templeteViews(selectedImage: UIImage(systemName: "heart.fill")!,
                                                    normalImage: UIImage(systemName: "heart")!,
-                                                   viewController: FavoriteViewController())
+                                                   viewController: FavoriteViewController(),
+                                                   title: "favorite")
         
         let myPageViewController = templeteViews(selectedImage: UIImage(systemName: "person.fill")!,
                                                  normalImage: UIImage(systemName: "person")!,
-                                                 viewController: MyPageViewController())
+                                                 viewController: MyPageViewController(),
+                                                 title: "my page")
     
         self.viewControllers = [homeViewController,
                                 serchViewController,
@@ -44,11 +49,13 @@ class MainTabBar: UITabBarController {
         UITabBar.appearance().tintColor = .gray
     }
     
-    func templeteViews(selectedImage: UIImage, normalImage: UIImage, viewController: UIViewController) -> UINavigationController {
+    func templeteViews(selectedImage: UIImage, normalImage: UIImage, viewController: UIViewController, title: String) -> UINavigationController {
         let vc = viewController
         let navVC = UINavigationController(rootViewController: vc)
         navVC.tabBarItem.image = normalImage
         navVC.tabBarItem.selectedImage = selectedImage
+        navVC.tabBarItem.title = title
+    
         return navVC
     }
 }
@@ -56,13 +63,13 @@ class MainTabBar: UITabBarController {
 class FavoriteViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "favorite"
+        self.navigationItem.title = "favorite"
     }
 }
 
 class FeaturedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "featured"
+        self.navigationItem.title = "featured"
     }
 }
