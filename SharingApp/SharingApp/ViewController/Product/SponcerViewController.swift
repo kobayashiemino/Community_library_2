@@ -9,6 +9,12 @@
 import UIKit
 import WCLShineButton
 
+struct SponcerItem {
+    let image: UIImage
+    let category: String
+    let title: String
+}
+
 class SponcerViewController: UIViewController {
     
     private var post: Post?
@@ -18,6 +24,16 @@ class SponcerViewController: UIViewController {
                                      UIImage(named: "related3")!,
                                      UIImage(named: "related4")!,
                                      UIImage(named: "related5")!]
+    
+    private var items: [SponcerItem] = [SponcerItem(image: UIImage(named: "soccer_ball")!,
+                                                    category: "Lending",
+                                                    title: "soccer ball"),
+                                        SponcerItem(image: UIImage(named: "soccer_ticket")!,
+                                                    category: "Give away",
+                                                    title: "bear cup ticket"),
+                                        SponcerItem(image: UIImage(named: "soccer_tutorial")!,
+                                                    category: "Tutorial",
+                                                    title: "6 best skills")]
     
     private let itemImageView: UIImageView = {
         let imageView = UIImageView()
@@ -79,7 +95,7 @@ class SponcerViewController: UIViewController {
     
     private let relatedLabel: UILabel = {
         let label = UILabel()
-        label.text = "related video"
+        label.text = "other  provisions"
         label.font = .boldSystemFont(ofSize: 19)
         label.textColor = .gray
         return label
@@ -110,7 +126,7 @@ class SponcerViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
         itemImageView.image = UIImage(named: "soccer_sponcer")!
         titleLabel.text = "Shiroyama Soccer Association"
-        captionLabel.text = "Based on its social responsibility as the organization that controls soccer competitions, the Shiroyama Football Association (SFA) creates a rich sports culture through soccer, and promotes the healthy development of people's mind and body and the development of society. Based on the philosophy of 'contributing,' we are engaged in various social contribution activities through soccer."
+        captionLabel.text = "Based on its social responsibility as the organization that controls soccer competitions, the Shiroyama Football Association (SFA) creates a rich sports culture through soccer, and promotes the healthy development of people's mind and body and the development of society."
     }
     
     required init?(coder: NSCoder) {
@@ -138,14 +154,14 @@ class SponcerViewController: UIViewController {
         backTopreviousViewButton.addTarget(self, action: #selector(didTapBackTopreviousViewButton), for: .touchUpInside)
         
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: 100, height: 100)
+        layout.itemSize = CGSize(width: 130, height: 130)
         layout.scrollDirection = .horizontal
-        layout.sectionInset = UIEdgeInsets(top: 15, left: 10, bottom: 0, right: 10)
+        layout.sectionInset = UIEdgeInsets(top: 28, left: 10, bottom: 0, right: 10)
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         if let collectionView = collectionView {
             collectionView.delegate = self
             collectionView.dataSource = self
-            collectionView.register(ProductCollectionViewCell.self, forCellWithReuseIdentifier: ProductCollectionViewCell.identifier)
+            collectionView.register(SponcerCollectionViewCell.self, forCellWithReuseIdentifier: SponcerCollectionViewCell.identifier)
             collectionView.backgroundColor = .init(white: 0.9, alpha: 0.5)
             collectionView.showsHorizontalScrollIndicator = false
             view.addSubview(collectionView)
@@ -154,12 +170,12 @@ class SponcerViewController: UIViewController {
     }
     
     override func viewDidLayoutSubviews() {
-        itemImageView.frame = CGRect(x: 0, y: 0, width: view.width, height: view.width - 200)
+        itemImageView.frame = CGRect(x: 0, y: 0, width: view.width, height: view.width - 220)
 //        favoriteButton.frame = CGRect(x: view.width - 62, y: 10, width: 52, height: 52)
-        favoriteButton.center.y = itemImageView.bottom + 20
+        favoriteButton.center.y = itemImageView.bottom + 30
         backTopreviousViewButton.frame = CGRect(x: 10, y: 10, width: 50, height: 50)
         titleLabel.frame = CGRect(x: 10,
-                                  y: itemImageView.bottom + 20,
+                                  y: itemImageView.bottom + 30,
                                   width: view.width - 20,
                                   height: 32)
         //        rankImageView.frame = CGRect(x: titleLabel.right + 20,
@@ -169,14 +185,14 @@ class SponcerViewController: UIViewController {
         captionLabel.frame = CGRect(x: 10,
                                     y: titleLabel.bottom,
                                     width: view.width - 20,
-                                    height: 145)
+                                    height: 120)
         SDGsLabel.frame = CGRect(x: 10, y: captionLabel.bottom, width: view.width, height: 20)
         sponcerSDGsView.frame = CGRect(x: 0, y: SDGsLabel.bottom, width: view.width, height: 70)
         collectionView?.frame = CGRect(x: 0,
                                        y: sponcerSDGsView.bottom,
                                        width: view.width,
-                                       height: view.height - captionLabel.bottom - 120)
-        relatedLabel.frame = CGRect(x: 10, y: 5, width: view.width, height: 30)
+                                       height: view.height - captionLabel.bottom - 140)
+        relatedLabel.frame = CGRect(x: 10, y: 10, width: view.width, height: 25)
     }
     
     @objc private func didTapBackTopreviousViewButton() {
@@ -192,12 +208,12 @@ class SponcerViewController: UIViewController {
 
 extension SponcerViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return items.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProductCollectionViewCell.identifier, for: indexPath) as! ProductCollectionViewCell
-        cell.relatedImageView.image = images[indexPath.row]
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SponcerCollectionViewCell.identifier, for: indexPath) as! SponcerCollectionViewCell
+        cell.configure(item: items[indexPath.row])
         return cell
     }
 }

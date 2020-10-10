@@ -27,6 +27,7 @@
 		823A2BD225174CC200B4AB6F /* PinterestLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823A2BD125174CC200B4AB6F /* PinterestLayout.swift */; };
 		824203A325309A8200876020 /* SponcerSDGsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824203A225309A8200876020 /* SponcerSDGsView.swift */; };
 		824203A525309C4D00876020 /* SponcerSDGsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824203A425309C4D00876020 /* SponcerSDGsCell.swift */; };
+		824203A725317D7000876020 /* SponcerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824203A625317D7000876020 /* SponcerCollectionViewCell.swift */; };
 		824CA4ED25301F4B004C9420 /* ProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824CA4EC25301F4B004C9420 /* ProductCollectionViewCell.swift */; };
 		825607512528D6CB00D2FF06 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825607502528D6CB00D2FF06 /* MessageTableViewCell.swift */; };
 		825607532529907100D2FF06 /* MessageViewContrller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825607522529907100D2FF06 /* MessageViewContrller.swift */; };
@@ -90,6 +91,7 @@
 		823A2BD125174CC200B4AB6F /* PinterestLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinterestLayout.swift; sourceTree = "<group>"; };
 		824203A225309A8200876020 /* SponcerSDGsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SponcerSDGsView.swift; sourceTree = "<group>"; };
 		824203A425309C4D00876020 /* SponcerSDGsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SponcerSDGsCell.swift; sourceTree = "<group>"; };
+		824203A625317D7000876020 /* SponcerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SponcerCollectionViewCell.swift; sourceTree = "<group>"; };
 		824CA4EC25301F4B004C9420 /* ProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewCell.swift; sourceTree = "<group>"; };
 		825607502528D6CB00D2FF06 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
 		825607522529907100D2FF06 /* MessageViewContrller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewContrller.swift; sourceTree = "<group>"; };
@@ -261,6 +263,7 @@
 				8233323B2530344100F8E2EA /* SponcerViewController.swift */,
 				824203A225309A8200876020 /* SponcerSDGsView.swift */,
 				824203A425309C4D00876020 /* SponcerSDGsCell.swift */,
+				824203A625317D7000876020 /* SponcerCollectionViewCell.swift */,
 			);
 			path = Product;
 			sourceTree = "<group>";
@@ -559,6 +562,7 @@
 				828D112E250C922B004DE118 /* PostModel.swift in Sources */,
 				82820D1C2504D8F8008EA57C /* SearchViewController.swift in Sources */,
 				824203A525309C4D00876020 /* SponcerSDGsCell.swift in Sources */,
+				824203A725317D7000876020 /* SponcerCollectionViewCell.swift in Sources */,
 				82F21407250E139700016C91 /* SelectCategoryViewCell.swift in Sources */,
 				82F21409250E4F3900016C91 /* MycollectionViewTagHeaderView.swift in Sources */,
 				829E7A1925072BDC000DBFED /* StorageManeger.swift in Sources */,
