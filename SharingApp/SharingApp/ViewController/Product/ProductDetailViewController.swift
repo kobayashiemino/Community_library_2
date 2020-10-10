@@ -84,12 +84,13 @@ class ProductDetailViewController: UIViewController {
         return view
     }()
     
-    private let sponcerLabel: UILabel = {
-        let label = UILabel()
-        label.numberOfLines = 0
-        label.font = .boldSystemFont(ofSize: 14)
-        label.textColor = .darkGray
-        label.textAlignment = .left
+    private let sponcerLabel: UIButton = {
+        let label = UIButton()
+        label.titleLabel?.numberOfLines = 0
+        label.titleLabel?.font = .boldSystemFont(ofSize: 14)
+        label.titleLabel?.textColor = .darkGray
+        label.titleLabel?.textAlignment = .left
+        label.setTitleColor(.darkGray, for: .normal)
         return label
     }()
     
@@ -119,7 +120,7 @@ class ProductDetailViewController: UIViewController {
         itemImageView.image = UIImage(named: "soccer")!
         titleLabel.text = "Dribbling & Skills that will blow your mind!"
         captionLabel.text = "Today we are learning how to dribble. This Dribble video will teach you a different style of Dribbling but based on the same idea, slow to fast. "
-        sponcerLabel.text = "Shiroyama Soccer Association"
+        sponcerLabel.setTitle("Shiroyama Soccer Association", for: .normal)
     }
     
     required init?(coder: NSCoder) {
@@ -143,6 +144,7 @@ class ProductDetailViewController: UIViewController {
         view.addSubview(providedLabel)
         view.addSubview(iconImageView)
         view.addSubview(sponcerLabel)
+        sponcerLabel.addTarget(self, action: #selector(didTapSponcerLabel), for: .touchUpInside)
         
         backTopreviousViewButton.addTarget(self, action: #selector(didTapBackTopreviousViewButton), for: .touchUpInside)
         
@@ -169,7 +171,7 @@ class ProductDetailViewController: UIViewController {
         iconImageView.frame = CGRect(x: providedLabel.right, y: itemImageView.bottom + 5, width: 20, height: 20)
         iconImageView.layer.cornerRadius = iconImageView.width / 2
         iconImageView.center.y = providedLabel.center.y
-        sponcerLabel.frame = CGRect(x: iconImageView.right + 5, y: itemImageView.bottom + 5, width: 220, height: 30)
+        sponcerLabel.frame = CGRect(x: iconImageView.right, y: itemImageView.bottom + 5, width: 220, height: 30)
         titleLabel.frame = CGRect(x: 10,
                                   y: iconImageView.bottom + 5,
                                   width: view.width - 20,
@@ -193,6 +195,11 @@ class ProductDetailViewController: UIViewController {
         tabBarController?.navigationController?.navigationBar.isHidden = false
         navigationController?.popViewController(animated: true)
         //        dismiss(animated: true, completion: nil)
+    }
+    
+    @objc func didTapSponcerLabel() {
+        let vc = SponcerViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     override var prefersStatusBarHidden: Bool {

@@ -17,6 +17,7 @@
 		821C8EC2250109D3001CDDB9 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821C8EC1250109D3001CDDB9 /* Extensions.swift */; };
 		8232EB1F25031554007511FC /* MenuButtuns.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8232EB1E25031554007511FC /* MenuButtuns.swift */; };
 		8232EB212503157C007511FC /* MenuButtunCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8232EB202503157C007511FC /* MenuButtunCell.swift */; };
+		8233323C2530344100F8E2EA /* SponcerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8233323B2530344100F8E2EA /* SponcerViewController.swift */; };
 		8234BF072524DC1E00EF3F8D /* SDGsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8234BF062524DC1E00EF3F8D /* SDGsViewController.swift */; };
 		8234BF092524E4DF00EF3F8D /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8234BF082524E4DF00EF3F8D /* CollectionViewCell.swift */; };
 		8234BF182528AF5200EF3F8D /* MessageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8234BF172528AF5200EF3F8D /* MessageTableViewController.swift */; };
@@ -24,6 +25,8 @@
 		82375499252AC35F00CDAA1E /* HomeItemCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82375498252AC35F00CDAA1E /* HomeItemCellCollectionViewCell.swift */; };
 		8237549C252EF6FF00CDAA1E /* MainTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8237549B252EF6FF00CDAA1E /* MainTabBar.swift */; };
 		823A2BD225174CC200B4AB6F /* PinterestLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823A2BD125174CC200B4AB6F /* PinterestLayout.swift */; };
+		824203A325309A8200876020 /* SponcerSDGsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824203A225309A8200876020 /* SponcerSDGsView.swift */; };
+		824203A525309C4D00876020 /* SponcerSDGsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824203A425309C4D00876020 /* SponcerSDGsCell.swift */; };
 		824CA4ED25301F4B004C9420 /* ProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824CA4EC25301F4B004C9420 /* ProductCollectionViewCell.swift */; };
 		825607512528D6CB00D2FF06 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825607502528D6CB00D2FF06 /* MessageTableViewCell.swift */; };
 		825607532529907100D2FF06 /* MessageViewContrller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825607522529907100D2FF06 /* MessageViewContrller.swift */; };
@@ -77,6 +80,7 @@
 		821C8EC1250109D3001CDDB9 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		8232EB1E25031554007511FC /* MenuButtuns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButtuns.swift; sourceTree = "<group>"; };
 		8232EB202503157C007511FC /* MenuButtunCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButtunCell.swift; sourceTree = "<group>"; };
+		8233323B2530344100F8E2EA /* SponcerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SponcerViewController.swift; sourceTree = "<group>"; };
 		8234BF062524DC1E00EF3F8D /* SDGsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDGsViewController.swift; sourceTree = "<group>"; };
 		8234BF082524E4DF00EF3F8D /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		8234BF172528AF5200EF3F8D /* MessageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewController.swift; sourceTree = "<group>"; };
@@ -84,6 +88,8 @@
 		82375498252AC35F00CDAA1E /* HomeItemCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeItemCellCollectionViewCell.swift; sourceTree = "<group>"; };
 		8237549B252EF6FF00CDAA1E /* MainTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBar.swift; sourceTree = "<group>"; };
 		823A2BD125174CC200B4AB6F /* PinterestLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinterestLayout.swift; sourceTree = "<group>"; };
+		824203A225309A8200876020 /* SponcerSDGsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SponcerSDGsView.swift; sourceTree = "<group>"; };
+		824203A425309C4D00876020 /* SponcerSDGsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SponcerSDGsCell.swift; sourceTree = "<group>"; };
 		824CA4EC25301F4B004C9420 /* ProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewCell.swift; sourceTree = "<group>"; };
 		825607502528D6CB00D2FF06 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
 		825607522529907100D2FF06 /* MessageViewContrller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewContrller.swift; sourceTree = "<group>"; };
@@ -252,6 +258,9 @@
 			children = (
 				82820D182504B4D5008EA57C /* ProductDetailViewController.swift */,
 				824CA4EC25301F4B004C9420 /* ProductCollectionViewCell.swift */,
+				8233323B2530344100F8E2EA /* SponcerViewController.swift */,
+				824203A225309A8200876020 /* SponcerSDGsView.swift */,
+				824203A425309C4D00876020 /* SponcerSDGsCell.swift */,
 			);
 			path = Product;
 			sourceTree = "<group>";
@@ -549,10 +558,12 @@
 				821C8EAE2500ED2D001CDDB9 /* HomeViewController.swift in Sources */,
 				828D112E250C922B004DE118 /* PostModel.swift in Sources */,
 				82820D1C2504D8F8008EA57C /* SearchViewController.swift in Sources */,
+				824203A525309C4D00876020 /* SponcerSDGsCell.swift in Sources */,
 				82F21407250E139700016C91 /* SelectCategoryViewCell.swift in Sources */,
 				82F21409250E4F3900016C91 /* MycollectionViewTagHeaderView.swift in Sources */,
 				829E7A1925072BDC000DBFED /* StorageManeger.swift in Sources */,
 				82820D1325047EE3008EA57C /* SelectRankPopup.swift in Sources */,
+				8233323C2530344100F8E2EA /* SponcerViewController.swift in Sources */,
 				82820D1F2505F2E4008EA57C /* SearchViewCell.swift in Sources */,
 				82BA516825034225000859D5 /* MyPageViewController.swift in Sources */,
 				828D112C2508992D004DE118 /* NotificationFollowEventTableViewCell.swift in Sources */,
@@ -560,6 +571,7 @@
 				829E7A1525072A7C000DBFED /* DatabaseManeger.swift in Sources */,
 				829E7A1B2507427B000DBFED /* RegisterViewController.swift in Sources */,
 				82BA516D25034525000859D5 /* MypageCollectionReusableView.swift in Sources */,
+				824203A325309A8200876020 /* SponcerSDGsView.swift in Sources */,
 				829E7A2425085EF5000DBFED /* UserFollowTableViewCell.swift in Sources */,
 				8232EB1F25031554007511FC /* MenuButtuns.swift in Sources */,
 				821C8EAA2500ED2D001CDDB9 /* AppDelegate.swift in Sources */,
