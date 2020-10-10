@@ -24,8 +24,6 @@ class SponcerSDGsView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        backgroundColor = .systemRed
-        
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: 50, height: 50)
         layout.scrollDirection = .horizontal

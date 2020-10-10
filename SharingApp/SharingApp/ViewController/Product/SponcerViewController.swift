@@ -87,6 +87,14 @@ class SponcerViewController: UIViewController {
     
     private let sponcerSDGsView = SponcerSDGsView()
     
+    private let SDGsLabel: UILabel = {
+        let label = UILabel()
+        label.text = "corresponding SDGs"
+        label.font = .boldSystemFont(ofSize: 15)
+        label.textColor = .gray
+        return label
+    }()
+    
     init(post: Post) {
         self.post = post
         super.init(nibName: nil, bundle: nil)
@@ -125,6 +133,7 @@ class SponcerViewController: UIViewController {
         view.addSubview(captionLabel)
         view.addSubview(sponcerSDGsView)
         view.addSubview(favoriteButton)
+        view.addSubview(SDGsLabel)
         
         backTopreviousViewButton.addTarget(self, action: #selector(didTapBackTopreviousViewButton), for: .touchUpInside)
         
@@ -145,12 +154,12 @@ class SponcerViewController: UIViewController {
     }
     
     override func viewDidLayoutSubviews() {
-        itemImageView.frame = CGRect(x: 0, y: 0, width: view.width, height: view.width - 180)
+        itemImageView.frame = CGRect(x: 0, y: 0, width: view.width, height: view.width - 200)
 //        favoriteButton.frame = CGRect(x: view.width - 62, y: 10, width: 52, height: 52)
-        favoriteButton.center.y = itemImageView.bottom + 10
+        favoriteButton.center.y = itemImageView.bottom + 20
         backTopreviousViewButton.frame = CGRect(x: 10, y: 10, width: 50, height: 50)
         titleLabel.frame = CGRect(x: 10,
-                                  y: itemImageView.bottom + 10,
+                                  y: itemImageView.bottom + 20,
                                   width: view.width - 20,
                                   height: 32)
         //        rankImageView.frame = CGRect(x: titleLabel.right + 20,
@@ -161,11 +170,12 @@ class SponcerViewController: UIViewController {
                                     y: titleLabel.bottom,
                                     width: view.width - 20,
                                     height: 145)
-        sponcerSDGsView.frame = CGRect(x: 0, y: captionLabel.bottom, width: view.width, height: 70)
+        SDGsLabel.frame = CGRect(x: 10, y: captionLabel.bottom, width: view.width, height: 20)
+        sponcerSDGsView.frame = CGRect(x: 0, y: SDGsLabel.bottom, width: view.width, height: 70)
         collectionView?.frame = CGRect(x: 0,
                                        y: sponcerSDGsView.bottom,
                                        width: view.width,
-                                       height: view.height - captionLabel.bottom - 110)
+                                       height: view.height - captionLabel.bottom - 120)
         relatedLabel.frame = CGRect(x: 10, y: 5, width: view.width, height: 30)
     }
     
