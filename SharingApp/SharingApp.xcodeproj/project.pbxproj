@@ -28,6 +28,9 @@
 		824203A325309A8200876020 /* SponcerSDGsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824203A225309A8200876020 /* SponcerSDGsView.swift */; };
 		824203A525309C4D00876020 /* SponcerSDGsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824203A425309C4D00876020 /* SponcerSDGsCell.swift */; };
 		824203A725317D7000876020 /* SponcerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824203A625317D7000876020 /* SponcerCollectionViewCell.swift */; };
+		824203A925321B1600876020 /* LetterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824203A825321B1600876020 /* LetterViewController.swift */; };
+		824203AB25321B7000876020 /* LetterViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824203AA25321B7000876020 /* LetterViewCell.swift */; };
+		824203AD2532C18D00876020 /* CategoryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824203AC2532C18D00876020 /* CategoryHeaderView.swift */; };
 		824CA4ED25301F4B004C9420 /* ProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824CA4EC25301F4B004C9420 /* ProductCollectionViewCell.swift */; };
 		825607512528D6CB00D2FF06 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825607502528D6CB00D2FF06 /* MessageTableViewCell.swift */; };
 		825607532529907100D2FF06 /* MessageViewContrller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825607522529907100D2FF06 /* MessageViewContrller.swift */; };
@@ -92,6 +95,9 @@
 		824203A225309A8200876020 /* SponcerSDGsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SponcerSDGsView.swift; sourceTree = "<group>"; };
 		824203A425309C4D00876020 /* SponcerSDGsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SponcerSDGsCell.swift; sourceTree = "<group>"; };
 		824203A625317D7000876020 /* SponcerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SponcerCollectionViewCell.swift; sourceTree = "<group>"; };
+		824203A825321B1600876020 /* LetterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterViewController.swift; sourceTree = "<group>"; };
+		824203AA25321B7000876020 /* LetterViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterViewCell.swift; sourceTree = "<group>"; };
+		824203AC2532C18D00876020 /* CategoryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryHeaderView.swift; sourceTree = "<group>"; };
 		824CA4EC25301F4B004C9420 /* ProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewCell.swift; sourceTree = "<group>"; };
 		825607502528D6CB00D2FF06 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
 		825607522529907100D2FF06 /* MessageViewContrller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewContrller.swift; sourceTree = "<group>"; };
@@ -264,6 +270,8 @@
 				824203A225309A8200876020 /* SponcerSDGsView.swift */,
 				824203A425309C4D00876020 /* SponcerSDGsCell.swift */,
 				824203A625317D7000876020 /* SponcerCollectionViewCell.swift */,
+				824203A825321B1600876020 /* LetterViewController.swift */,
+				824203AA25321B7000876020 /* LetterViewCell.swift */,
 			);
 			path = Product;
 			sourceTree = "<group>";
@@ -394,6 +402,7 @@
 				82375498252AC35F00CDAA1E /* HomeItemCellCollectionViewCell.swift */,
 				82D645AC2521957500FDEB07 /* CategoryView.swift */,
 				82EA851225021A9200FD0370 /* HomeHeader.swift */,
+				824203AC2532C18D00876020 /* CategoryHeaderView.swift */,
 				823A2BD125174CC200B4AB6F /* PinterestLayout.swift */,
 				8234BF162528AF1000EF3F8D /* Message */,
 				8232EB2225031582007511FC /* MenuButton */,
@@ -561,11 +570,13 @@
 				821C8EAE2500ED2D001CDDB9 /* HomeViewController.swift in Sources */,
 				828D112E250C922B004DE118 /* PostModel.swift in Sources */,
 				82820D1C2504D8F8008EA57C /* SearchViewController.swift in Sources */,
+				824203AB25321B7000876020 /* LetterViewCell.swift in Sources */,
 				824203A525309C4D00876020 /* SponcerSDGsCell.swift in Sources */,
 				824203A725317D7000876020 /* SponcerCollectionViewCell.swift in Sources */,
 				82F21407250E139700016C91 /* SelectCategoryViewCell.swift in Sources */,
 				82F21409250E4F3900016C91 /* MycollectionViewTagHeaderView.swift in Sources */,
 				829E7A1925072BDC000DBFED /* StorageManeger.swift in Sources */,
+				824203A925321B1600876020 /* LetterViewController.swift in Sources */,
 				82820D1325047EE3008EA57C /* SelectRankPopup.swift in Sources */,
 				8233323C2530344100F8E2EA /* SponcerViewController.swift in Sources */,
 				82820D1F2505F2E4008EA57C /* SearchViewCell.swift in Sources */,
@@ -585,6 +596,7 @@
 				825607512528D6CB00D2FF06 /* MessageTableViewCell.swift in Sources */,
 				82D645AB25207B8800FDEB07 /* SuggestModel.swift in Sources */,
 				829E7A1725072B3A000DBFED /* AuthManeger.swift in Sources */,
+				824203AD2532C18D00876020 /* CategoryHeaderView.swift in Sources */,
 				828D112625087534004DE118 /* NotificationViewController.swift in Sources */,
 				8232EB212503157C007511FC /* MenuButtunCell.swift in Sources */,
 				82C765D42520789A00DE9BDE /* SuggestTableViewCell.swift in Sources */,

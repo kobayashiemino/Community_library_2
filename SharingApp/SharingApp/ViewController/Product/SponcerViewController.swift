@@ -43,13 +43,13 @@ class SponcerViewController: UIViewController {
         return imageView
     }()
     
-    private lazy var favoriteButton: WCLShineButton = {
+    private lazy var letterButton: WCLShineButton = {
         var params = WCLShineParams()
         params.bigShineColor = .systemPink
         params.smallShineColor = .systemPink
-        let button = WCLShineButton(frame: .init(x: view.width - 62, y: 10, width: 42, height: 42),
+        let button = WCLShineButton(frame: .init(x: view.width - 72, y: 10, width: 52, height: 40.66),
                                     params: params)
-        button.image = .defaultAndSelect(UIImage(named: "heart")!, UIImage(named: "heart_selected")!)
+        button.image = .defaultAndSelect(UIImage(named: "letter")!, UIImage(named: "letter")!)
         return button
     }()
     
@@ -148,10 +148,11 @@ class SponcerViewController: UIViewController {
         view.addSubview(titleLabel)
         view.addSubview(captionLabel)
         view.addSubview(sponcerSDGsView)
-        view.addSubview(favoriteButton)
+        view.addSubview(letterButton)
         view.addSubview(SDGsLabel)
         
         backTopreviousViewButton.addTarget(self, action: #selector(didTapBackTopreviousViewButton), for: .touchUpInside)
+        letterButton.addTarget(self, action: #selector(didTapLetterButton), for: .touchUpInside)
         
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: 130, height: 130)
@@ -172,7 +173,7 @@ class SponcerViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         itemImageView.frame = CGRect(x: 0, y: 0, width: view.width, height: view.width - 220)
 //        favoriteButton.frame = CGRect(x: view.width - 62, y: 10, width: 52, height: 52)
-        favoriteButton.center.y = itemImageView.bottom + 30
+        letterButton.center.y = itemImageView.bottom + 30
         backTopreviousViewButton.frame = CGRect(x: 10, y: 10, width: 50, height: 50)
         titleLabel.frame = CGRect(x: 10,
                                   y: itemImageView.bottom + 30,
@@ -199,6 +200,11 @@ class SponcerViewController: UIViewController {
         tabBarController?.navigationController?.navigationBar.isHidden = false
         navigationController?.popViewController(animated: true)
         //        dismiss(animated: true, completion: nil)
+    }
+    
+    @objc private func didTapLetterButton() {
+        let vc = LetterViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     override var prefersStatusBarHidden: Bool {

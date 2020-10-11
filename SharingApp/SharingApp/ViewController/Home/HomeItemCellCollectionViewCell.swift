@@ -80,10 +80,10 @@ class HomeItemCell: UICollectionViewCell {
         shadowView.frame = CGRect(x: 0, y: 0, width: width, height: height)
         imageView.frame = CGRect(x: 0, y: 0, width: shadowView.frame.size.width, height: width - 90)
         titleLabel.frame = CGRect(x: 0, y: imageView.bottom - 5, width: width, height: 55)
-        sponcerIcon.frame = CGRect(x: 5, y: 0, width: 30, height: 30)
+        sponcerIcon.frame = CGRect(x: 10, y: 0, width: 30, height: 30)
         sponcerIcon.layer.cornerRadius = sponcerIcon.width / 2
-        sponcerLabel.frame = CGRect(x: sponcerIcon.right + 10, y: titleLabel.bottom, width: width - 50, height: 40)
-        sponcerIcon.center.y = height - (sponcerLabel.height / 2)
+        sponcerLabel.frame = CGRect(x: sponcerIcon.right + 10, y: titleLabel.bottom, width: width - 50, height: 30)
+        sponcerIcon.center.y = height - (sponcerLabel.height / 2 + 10)
     }
     
     public func configure(item: Item) {

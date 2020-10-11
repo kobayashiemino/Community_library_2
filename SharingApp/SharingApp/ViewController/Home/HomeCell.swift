@@ -28,7 +28,9 @@ class HomeCell: UICollectionViewCell {
     
     private let categoryLabel: UILabel = {
         let label = UILabel()
+        label.textAlignment = .center
         label.font = .boldSystemFont(ofSize: 20)
+        label.textColor = .darkGray
         return label
     }()
     
@@ -37,8 +39,9 @@ class HomeCell: UICollectionViewCell {
         label.textAlignment = .right
         let attributedString = NSMutableAttributedString()
         attributedString.append(NSAttributedString(string: "more "))
-        attributedString.append(setImageInLabel(image: UIImage(systemName: "chevron.right")!))
+        attributedString.append(setImageInLabel(image: UIImage(systemName: "chevron.right")!.withTintColor(.darkGray)))
         label.attributedText = attributedString
+        label.textColor = .darkGray
         return label
     }()
     
@@ -74,9 +77,9 @@ class HomeCell: UICollectionViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         let moreLabelWidth: CGFloat = 100
-        categoryLabel.frame = CGRect(x: 10, y: 10, width: width - moreLabelWidth, height: 50)
-        moreLabel.frame = CGRect(x: width - moreLabelWidth - 10, y: 10, width: moreLabelWidth, height: 50)
-        collectionView?.frame = CGRect(x: 0, y: categoryLabel.bottom, width: width, height: height - 50)
+        categoryLabel.frame = CGRect(x: 10, y: 0, width: width, height: 50)
+        collectionView?.frame = CGRect(x: 0, y: categoryLabel.bottom, width: width, height: height - 90)
+        moreLabel.frame = CGRect(x: width - moreLabelWidth - 10, y: collectionView!.bottom, width: moreLabelWidth, height: 25)
     }
     
     public func configure(title: String, items:[Item]) {

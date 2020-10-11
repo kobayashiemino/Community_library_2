@@ -93,28 +93,54 @@ class HomeViewController: UIViewController {
                                          sponcerIcon: UIImage(named: "ticket_sponcer")!,
                                          title: "tickets for the Circus")]]
     
+    private lazy var titleView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor.lightGray.withAlphaComponent(0.2)
+        
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: self.view.width, height: 72))
+        label.text = "after school community"
+        label.textColor = .darkGray
+        label.textAlignment = .center
+        label.font = .boldSystemFont(ofSize: 18)
+        view.addSubview(label)
+        
+        return view
+    }()
+    
+    private let categoryHeaderView = CategoryHeaderView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
-        self.navigationItem.title = "home"
+        view.backgroundColor = .white
         
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: view.width, height: 270)
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 0)
+        layout.itemSize = CGSize(width: view.width, height: 320)
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        layout.minimumLineSpacing = 0
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         if let collectionView = collectionView {
             view.addSubview(collectionView)
             collectionView.register(HomeCell.self, forCellWithReuseIdentifier: HomeCell.identifier)
             collectionView.delegate = self
             collectionView.dataSource = self
-            collectionView.backgroundColor = .lightGray
+            collectionView.backgroundColor = .white
             collectionView.showsVerticalScrollIndicator = false
         }
+        
+        view.addSubview(titleView)
+        view.addSubview(categoryHeaderView)
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        collectionView?.frame = view.bounds
+        titleView.frame = CGRect(x: 0, y: 0, width: view.width, height: 72)
+        categoryHeaderView.frame = CGRect(x: 10, y: 82, width: view.width - 20, height: 62)
+        collectionView?.frame = CGRect(x: 0, y: categoryHeaderView.bottom, width: view.width, height: view.height - 144)
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
     }
 }
 
